@@ -45,6 +45,7 @@ def read_mysql_to_csv(level, start, end):
             print("创建%s失败" % filename, e)
 
 
+# 压缩文件并删除csv
 def yasuo(tar_name):
     os.chdir('csv/')
     tar = os.system("tar czvf %s.tar.gz *.csv" % tar_name)
