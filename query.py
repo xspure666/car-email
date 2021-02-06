@@ -22,7 +22,7 @@ def conn_mysql(level, start, end):
         print('无法连接到mysql服务器，请检查是否打开VPN或者网络故障', e)
 
 
-# 读取数据
+# 读取数据，
 def read_mysql_to_csv(level, start, end):
     header = ['ALARM_SEQ', 'VIN', 'VIN&PLATE_NUMBER', 'BRAND_MODEL', 'ORG_NAME', 'PLATE_NUMBER', 'item_cname',
               'ALARM_LEVEL', 'START_TIME', 'END_TIME', 'ALARM_TYPE_CODE', 'STATUS', 'ALARM_TYPE_VALUE', 'VEHICLE_SEQ',
