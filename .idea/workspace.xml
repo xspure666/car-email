@@ -21,6 +21,7 @@
     <option name="PATH_TO_GIT" value="D:\Soft\Softfile\Git\bin\git.exe" />
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="xspure666 &lt;1002569591@qq.com&gt;" />
         <option value="陆明通" />
       </list>
     </option>
@@ -267,10 +268,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="更新test文件人" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="560" y="113" key="CommitChangelistDialog2" timestamp="1612584346351">
+    <state x="560" y="113" key="CommitChangelistDialog2" timestamp="1612584391717">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="560" y="113" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1612584346351" />
+    <state x="560" y="113" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1612584391717" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1612581612637">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -319,10 +320,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="96" y="111" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1612583064644" />
-    <state x="-7" y="0" width="974" height="1040" key="Vcs.Push.Dialog.v2" timestamp="1612580961847">
+    <state x="-7" y="0" width="974" height="1040" key="Vcs.Push.Dialog.v2" timestamp="1612584467324">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="-7" y="0" width="974" height="1040" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1612580961847" />
+    <state x="-7" y="0" width="974" height="1040" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1612584467324" />
     <state x="752" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1612584133427">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
