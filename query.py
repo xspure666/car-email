@@ -6,7 +6,7 @@ import codecs
 import csv
 
 
-# 查询数据
+# describe :  查询数据
 def conn_mysql(level, start, end):
     sql = open('sql/sql.txt', 'r', encoding='utf-8').read()
     try:
