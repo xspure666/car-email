@@ -1,38 +1,25 @@
 SELECT
 	A.ALARM_SEQ AS ALARM_SEQ,
 	A.VIN AS VIN,
-	CONCAT(A.VIN, B.PLATE_NUMBER) AS fhh,
+	REPLACE ( CONCAT( A.VIN, TRIM( B.PLATE_NUMBER ) ), '\n', '' ) AS fhh,
 	E.BRAND_MODEL AS BRAND_MODEL,
 	C.ORG_NAME AS ORG_NAME,
-	B.PLATE_NUMBER AS PLATE_NUMBER,
+	REPLACE ( B.PLATE_NUMBER, '\n', '' ) AS PLATE_NUMBER,
 	D.item_cname AS item_cname,
-	CONCAT(A.ALARM_LEVEL, '级') AS ALARM_LEVEL,
-	DATE_FORMAT(A.START_TIME, "%%Y-%%m-%%d") AS START_TIME,
+	CONCAT( A.ALARM_LEVEL, '级' ) AS ALARM_LEVEL,
+	DATE_FORMAT( A.START_TIME, "%%Y-%%m-%%d" ) AS START_TIME,
 	A.END_TIME AS END_TIME,
 	A.ALARM_TYPE_CODE AS ALARM_TYPE_CODE,
-	A. STATUS AS STATUS,
+	A.STATUS AS STATUS,
 	A.ALARM_TYPE_VALUE AS ALARM_TYPE_VALUE,
 	A.VEHICLE_SEQ AS VEHICLE_SEQ,
 	D.item_code AS item_code,
-	(
-		UNIX_TIMESTAMP(A.`END_TIME`) - UNIX_TIMESTAMP(A.`START_TIME`)
-	) / 60 AS duration
+	( UNIX_TIMESTAMP( A.`END_TIME` ) - UNIX_TIMESTAMP( A.`START_TIME` ) ) / 60 AS duration
 FROM
-	(
-		SELECT
-			*
-		FROM
-			evwork.alarm_record
-		WHERE
-			ALARM_LEVEL = % d
-		AND START_TIME >= % s
-		AND START_TIME < % s
-	) A
-LEFT JOIN evbase. DIRECTORY D ON (
-	A.ALARM_TYPE_CODE = D.item_code
-)
-LEFT JOIN evwork.vehicle_info B ON A.vin = B.vin
-LEFT JOIN evbase.org_info C ON B.ORG_SEQ = C.ORG_SEQ
-LEFT JOIN evwork.`vehicle_model_info` E ON B.`VEHICLE_MODEL_SEQ` = E.`VEHICLE_MODEL_SEQ`
+	( SELECT * FROM evwork.alarm_record WHERE ALARM_LEVEL = % d AND START_TIME >= % s AND START_TIME < % s ) A
+	LEFT JOIN evbase.DIRECTORY D ON ( A.ALARM_TYPE_CODE = D.item_code )
+	LEFT JOIN evwork.vehicle_info B ON A.vin = B.vin
+	LEFT JOIN evbase.org_info C ON B.ORG_SEQ = C.ORG_SEQ
+	LEFT JOIN evwork.`vehicle_model_info` E ON B.`VEHICLE_MODEL_SEQ` = E.`VEHICLE_MODEL_SEQ`
 WHERE
 	D.query_code = 'alarm_record.alarm_type'
