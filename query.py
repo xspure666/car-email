@@ -48,12 +48,13 @@ def read_mysql_to_csv(level, start, end):
 # 压缩文件并删除csv
 def yasuo(tar_name):
     os.chdir('csv/')
+    # 　压缩Csv文件
     tar = os.system("tar czvf %s.tar.gz *.csv" % tar_name)
     if tar == 0:
         print("csv文件压缩成功")
-
     else:
         print("csv文件压缩失败")
+    # 压缩后删除csv文件
     delete = os.system('rm -f *.csv')
     if delete == 0:
         print("csv文件删除成功")
