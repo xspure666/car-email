@@ -3,6 +3,7 @@ import datetime
 import query
 import sendEmail
 
+# 运行时间
 start_time = datetime.datetime.today()
 print("\n\n\n\n【程序开始时间为：】", start_time)
 week_dict = {0: '一', 1: '二', 2: '三', 3: '四', 4: '五', 5: '六', 6: '日'}
