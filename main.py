@@ -19,13 +19,12 @@ end = (datetime.datetime.now() - datetime.timedelta(days=1)).date().strftime('%Y
 start = (datetime.datetime.now() - datetime.timedelta(days=7)).date().strftime('%Y%m%d')
 file_name = start + '-' + end + "告警数据"
 
+# 循环发送三级告警
 for i in range(1, 4):
     query.read_mysql_to_csv(i, start, datetime.datetime.now().date().strftime('%Y%m%d'))
 query.yasuo(file_name)
 end_time = datetime.datetime.today()
-print("程序开始时间为：", end_time)
 cost_time = str(end_time - start_time)
-print("查询总共耗时：% s" % cost_time)
 message = "fanghuanhua你好：\n" \
           "\t请注意查收%s 到 %s 车平台的告警数据。\n" \
           "PS:请核对数据日期是否准确" % (start, end)
